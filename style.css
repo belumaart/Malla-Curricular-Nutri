@@ -1,0 +1,166 @@
+/* Reset y body */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff0f5;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: #5a1a3d;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  color: #d81b60;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  font-weight: 700;
+  user-select: none;
+}
+
+/* Contenedor principal */
+#malla-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+/* Grupo de años pegados (dos por fila) */
+.anios-grupo {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Cada año */
+.anio {
+  flex: 1 1 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  min-width: 320px;
+}
+
+/* Título de año */
+.anio h2 {
+  color: #ad1457;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #f48fb1;
+  padding-bottom: 8px;
+  font-size: 1.9em;
+  font-weight: 700;
+  user-select: none;
+}
+
+/* Contenedor de semestres en fila horizontal con scroll si es necesario */
+.semestres {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #ec407a #fce4ec;
+}
+
+/* Scrollbar para Chrome, Edge, Safari */
+.semestres::-webkit-scrollbar {
+  height: 8px;
+}
+
+.semestres::-webkit-scrollbar-track {
+  background: #fce4ec;
+  border-radius: 10px;
+}
+
+.semestres::-webkit-scrollbar-thumb {
+  background-color: #ec407a;
+  border-radius: 10px;
+  border: 2px solid #fce4ec;
+}
+
+/* Cada semestre */
+.semestre {
+  background-color: #f8bbd0;
+  border: 2px solid #ec407a;
+  border-radius: 12px;
+  padding: 15px;
+  min-width: 270px;
+  max-width: 270px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  user-select: none;
+}
+
+/* Título semestre */
+.semestre h3 {
+  margin-top: 0;
+  color: #c2185b;
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Contenedor materias */
+.ramos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Cada materia */
+.ramo {
+  background-color: #f06292;
+  border: 2px solid #ec407a;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+  user-select: none;
+  color: white;
+  text-align: center;
+  box-shadow: 1px 1px 5px rgba(236, 64, 122, 0.5);
+}
+
+/* Hover materia */
+.ramo:hover {
+  background-color: #f48fb1;
+  transform: scale(1.05);
+}
+
+/* Estado aprobado */
+.aprobado {
+  background-color: #fce4ec !important;
+  border-color: #f8bbd0 !important;
+  color: #880e4f;
+  box-shadow: none;
+  cursor: default;
+}
+
+/* Responsive para móviles */
+@media (max-width: 720px) {
+  .anios-grupo {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .anio {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .semestres {
+    justify-content: center;
+  }
+}
